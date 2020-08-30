@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def pearson_r(x, y):
     """Compute Pearson correlation coefficient between two arrays."""
     # Compute correlation matrix: corr_mat

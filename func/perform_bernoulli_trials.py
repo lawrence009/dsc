@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def perform_bernoulli_trials(n, p):
     """Perform n Bernoulli trials with success probability p
     and return number of successes."""
