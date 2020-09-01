@@ -1,7 +1,14 @@
-# dsc
+# Discover Data Science (with Python)
 
-Springboard Data Science August 2020 Projects
+Springboard Data Science with Python August 2020 Projects
 
+
+
+## Mini-projects
+
+* London Borough Housing Prices (Time Series)
+* Dr. Semmelweis and the Discovery of Handwashing
+* Working with Strings in Panads
 
 ---
 ### Note
