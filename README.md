@@ -9,6 +9,7 @@ Springboard Data Science with Python August 2020 Projects
 * London Borough Housing Prices (Time Series)
 * Dr. Semmelweis and the Discovery of Handwashing
 * Working with Strings in Panads
+* Frequentist Case Study
 
 ---
 ### Note
