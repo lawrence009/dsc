@@ -2,7 +2,13 @@
 
 Springboard Data Science with Python August 2020 Projects
 
+## Skills
 
+Key concepts and skills - WIP
+
+## Functions
+
+Usuful functions for experimenting and uncderstanding statistics and ML
 
 ## Mini-projects
 
