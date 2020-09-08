@@ -8,7 +8,7 @@ Key concepts and skills - WIP
 
 ## Functions
 
-Usuful functions for experimenting and uncderstanding statistics and ML
+Useful functions for experimenting and understanding statistics and ML
 
 ## Mini-projects
 
