@@ -95,20 +95,34 @@ different costs to members (the listed costs are per half-hour 'slot'), and
 the guest user's ID is always 0. Include in your output the name of the
 facility, the name of the member formatted as a single column, and the cost.
 Order by descending cost, and do not use any subqueries. */
-SELECT f.name AS Facility,
-	   CONCAT( firstname, ' ', surname ) AS Member,
-	   CASE WHEN b.memid =0 THEN slots * guestcost
-	 		ELSE slots * membercost END AS Cost
-FROM Bookings AS b
-	INNER JOIN Facilities AS f USING ( facid )
-	INNER JOIN Members AS m USING ( memid )
+SELECT name AS Facility,
+       CONCAT( firstname, ' ', surname ) AS Member,
+       SUM( slots ) * (CASE WHEN memid =0 THEN guestcost
+                            ELSE membercost END ) AS Cost
+FROM Bookings
+	INNER JOIN Facilities USING ( facid )
+	INNER JOIN Members USING ( memid )
 WHERE starttime LIKE '2012-09-14%'
-	AND ( CASE WHEN b.memid =0 THEN slots * guestcost
-				ELSE slots * membercost END ) >30
-ORDER BY cost DESC;
+GROUP BY Facility, Member
+HAVING Cost >30
+ORDER BY Cost DESC
 
 /* Q9: This time, produce the same result as in Q8, but using a subquery. */
-
+SELECT Facility,
+       CONCAT( m.firstname, ' ', m.surname ) AS Member,
+       (CASE WHEN m.memid =0 THEN guestcost
+			 ELSE membercost END) * b.slots AS Cost
+FROM Members AS m,
+     (SELECT SUM( slots ) AS slots, memid, facid 
+     	FROM Bookings
+		WHERE starttime LIKE '2012-09-14%'
+		GROUP BY facid, memid) AS b,
+	 (SELECT name AS Facility, facid, guestcost, membercost
+		FROM Facilities) AS f
+WHERE m.memid = b.memid AND f.facid = b.facid
+GROUP BY Facility, Member
+HAVING Cost >30
+ORDER BY Cost DESC;
 
 /* PART 2: SQLite
 
