@@ -14,6 +14,10 @@
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 
+/* run the command line below to creat a sqlite database
+     sqlite3 country_club.sqlite -init country_club_sqlite.sql
+*/
+
 --
 -- Database: 'country_club'
 --
@@ -25,12 +29,11 @@
 --
 
 CREATE TABLE IF NOT EXISTS Bookings (
-  bookid int(4) NOT NULL DEFAULT '0',
+  bookid integer primary key autoincrement,
   facid int(1) DEFAULT NULL,
   memid int(2) DEFAULT NULL,
   starttime varchar(19) DEFAULT NULL,
-  slots int(2) DEFAULT NULL,
-  PRIMARY KEY (bookid)
+  slots int(2) DEFAULT NULL
 );
 
 --
@@ -4092,13 +4095,12 @@ INSERT INTO Bookings (bookid, facid, memid, starttime, slots) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS Facilities (
-  facid int(1) NOT NULL DEFAULT '0',
+  facid integer primary key autoincrement,
   "name" varchar(15) DEFAULT NULL,
   membercost decimal(2,1) DEFAULT NULL,
   guestcost decimal(3,1) DEFAULT NULL,
   initialoutlay int(5) DEFAULT NULL,
-  monthlymaintenance int(4) DEFAULT NULL,
-  PRIMARY KEY (facid)
+  monthlymaintenance int(4) DEFAULT NULL
 );
 
 --
@@ -4123,15 +4125,14 @@ INSERT INTO Facilities (facid, name, membercost, guestcost, initialoutlay, month
 --
 
 CREATE TABLE IF NOT EXISTS Members (
-  memid int(2) NOT NULL DEFAULT '0',
+  memid integer primary key autoincrement,
   surname varchar(17) DEFAULT NULL,
   firstname varchar(9) DEFAULT NULL,
   address varchar(39) DEFAULT NULL,
   zipcode int(5) DEFAULT NULL,
   telephone varchar(14) DEFAULT NULL,
   recommendedby varchar(2) DEFAULT NULL,
-  joindate varchar(19) DEFAULT NULL,
-  PRIMARY KEY (memid)
+  joindate varchar(19) DEFAULT NULL
 );
 
 --
