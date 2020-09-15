@@ -133,3 +133,4 @@ dmypy.json
 
 # Specific to this repo
 data/
+*.sqlite

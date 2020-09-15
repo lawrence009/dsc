@@ -17,6 +17,7 @@ Useful functions for experimenting and understanding statistics and ML
 * Dr. Semmelweis and the Discovery of Handwashing
 * Working with Strings in Panads
 * Frequentist Case Study
+* ... and more
 
 ---
 ### Note
