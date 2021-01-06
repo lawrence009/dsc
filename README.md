@@ -12,8 +12,9 @@ Useful functions for experimenting and understanding statistics and ML
 
 ## Mini-projects
 
-* London Borough Housing Prices (Time Series)
 * Qunadl API and JSON Data Wrangling
+* London Borough Housing Prices (Time Series)
+* Analyzing Superbowls and Halftime Shows
 * Dr. Semmelweis and the Discovery of Handwashing
 * Working with Strings in Panads
 * Frequentist Case Study
